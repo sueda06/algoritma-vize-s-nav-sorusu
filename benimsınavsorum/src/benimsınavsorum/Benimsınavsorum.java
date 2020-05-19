@@ -56,7 +56,7 @@ public class Benimsınavsorum {
                        }
                     else System.out.println("tv yi olusturunuz");
                      break;
-                    
+                default:
             }
         }
     }
