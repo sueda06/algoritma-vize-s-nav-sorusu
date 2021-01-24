@@ -1,11 +1,11 @@
 
 package benimsınavsorum;
 import java.util.Scanner;
-public class Benimsınavsorum {
+public class BenimSınavSorum {
 
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
-         menuGoster();
+         MenuGoster();
          boolean cikis=false;
          Televizyon tv = null;
         while(cikis!=true){
@@ -39,9 +39,9 @@ public class Benimsınavsorum {
                     System.out.println("sesi ne kadar arttıracaksınız");
                     int parametre=s.nextInt();
                         if(parametre!=1)
-                        tv.sesArttır(parametre);
+                        tv.SesArttır(parametre);
                         else
-                        tv.sesArttır();
+                        tv.SesArttır();
                         }
                     else System.out.println("tv yi olusturunuz");
                      break;
@@ -50,9 +50,9 @@ public class Benimsınavsorum {
                     System.out.println("sesi ne kadar azaltacaksınız");
                      int a=s.nextInt();
                         if(a!=1)
-                        tv.sesAzalt(a);
+                        tv.SesAzalt(a);
                        else
-                       tv.sesAzalt(); 
+                       tv.SesAzalt(); 
                        }
                     else System.out.println("tv yi olusturunuz");
                      break;
@@ -60,7 +60,7 @@ public class Benimsınavsorum {
             }
         }
     }
-    private static void menuGoster(){
+    private static void MenuGoster(){
         System.out.println("***********menu**************");
         System.out.println("0 çıkış\n"+
                 "1  televizyon oluştur\n"+
@@ -126,7 +126,7 @@ class TeknolojikAlet{
     else
             System.out.println("alet zaten kapalı");
     }
-    public void sesArttır(){
+    public void SesArttır(){
         if(ses<20 && acik==true){
             ses++;
          System.out.println("ses seviyesi "+ses);
@@ -134,7 +134,7 @@ class TeknolojikAlet{
         else 
             System.out.println("ses maksimum arttırılamaz veya alet kapalı");
     } 
-    public void sesArttır(int arttırılacak){
+    public void SesArttır(int arttırılacak){
         if(ses<20 && acik==true &&(ses+arttırılacak)<20){
             ses+=arttırılacak;
          System.out.println("ses seviyesi "+ses);
@@ -142,7 +142,7 @@ class TeknolojikAlet{
         else 
             System.out.println("ses maksimum arttırılamaz veya alet kapalı");
     } 
-    public void sesAzalt(){
+    public void SesAzalt(){
         if(ses>0 && acik==true){
             ses--;
         System.out.println("ses seviyesi "+ses);
@@ -150,7 +150,7 @@ class TeknolojikAlet{
         else 
             System.out.println("ses minimum azaltılamaz veya alet kapalı");
     }
-    public void sesAzalt(int azaltılacak){
+    public void SesAzalt(int azaltılacak){
         if(ses>0 && acik==true && (ses-azaltılacak)>0){
             ses-=azaltılacak;
         System.out.println("ses seviyesi "+ses);
@@ -168,7 +168,7 @@ public Televizyon(String marka, String boyut,int fiyat){
 super(marka,boyut);
 this.fiyat=fiyat;
 }
-  public void sesAzalt(int azaltılacak){
+  public void SesAzalt(int azaltılacak){
         if(getSes()>0 && getAcik()==true && (getSes()-azaltılacak)>0){
             setSes(getSes()-azaltılacak);
         System.out.println("ses seviyesi "+getSes());
